@@ -468,7 +468,7 @@ http.createServer(function (req, res) {
       	nombreArchivo=nombreArchivo+".docx";
       }
 
-      nombreArchivo = "./programas/" + nombreArchivo;
+      //nombreArchivo = "./programas/" + nombreArchivo;
       // buf is a nodejs buffer, you can either write it to a file or do anything else with it.
       fs.writeFileSync(path.resolve(__dirname, nombreArchivo), buf);
       
