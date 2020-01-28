@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Add LI to an Existing UL</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#menu").append('<li><a href="#">New list item</a></li>');
+        
+    });
+    $('ul').on('click', 'li', function() {
+        $(this).remove();
+    });
+});
+</script>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+    </ul>
+    <button type="button">Add New LI Element</button>
+</body>
+</html>                            

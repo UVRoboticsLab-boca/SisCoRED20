@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>Forma para contenidos</title>
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="static/css/layouts/marketing.css">
+        <!--<![endif]-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        
+        var desc = "Esta experiencia educativa se localiza en el -L- , cuenta con -H- horas teóricas, -P- horas prácticas y -C- créditos ";
+        var desc2 = "Su propósito es ---[mencionar de manera general y breve la justificación]---. Es indispensable para el estudiante ----[mencionar de manera general la acción integradora que ejecuta el estudiante en la experiencia educativa]---, para su desarrollo se proponen las estrategias metodológicas de ---[mencionar algunas de las estrategias metodológicos a implementar]---. Por lo tanto, el desempeño de la unidad de competencia se evidencia  mediante ---[mencionar la evidencia de desempeño]---.";
+        var equivTxt= "y tiene equivalencia con la(s) experiencia(s) educativa(s) -E- ";
+        var descFin = ", que integran el plan de estudios 2020.";
+        $("button").click(function(){
+            $("#menu").append('<li><a href="#">New list item</a></li>');
+            
+        });
+
+        $('#slModal').change(function() {
+            var opMod = parseInt($(this).val());
+            switch(opMod){
+                case 1:
+                case 2:
+                case 7:
+                case 9:
+                case 10:
+                case 12:
+                    
+                    $("#lblOportunidad").val("ABGHJK=Todas");
+                    if (opMod == 2 || opMod==12){
+                        $("#idMax").val("15");
+                        $("#idMin").val("5");
+                    }
+                    else{
+                        $("#idMax").val("25");
+                        $("#idMin").val("10");
+                    }
+                    break;
+                default: 
+                    $("#lblOportunidad").val("AGJ= Cursativa");
+                    $("#idMax").val("15");
+                    $("#idMin").val("5");
+                    break;
+            }
+
+            $("#idInd").val("Grupal");
+
+            if (opMod==9 || opMod==10){
+                $("#lblEspacio").val("Interfacultades/Intrafacultades");
+            }
+            else{
+                $("#lblEspacio").val("Múltiples");
+            }
+        });
+
+        $('.descrip').change(function() {
+            if ($("#idCred").val().trim()){
+                desc = desc.replace("-C-",$("#idCred").val());
+            }
+            //desc = desc.replace("-C-",$(this).val());
+
+            var teoricas = $("#idHTeo").val().trim();
+            var practicas = $("#idHPra").val().trim();
+            if (teoricas) {
+                desc = desc.replace("-H-",$("#idHTeo").val());
+            }
+            if (practicas) {
+                desc = desc.replace("-P-",$("#idHPra").val());
+            }
+
+            if (teoricas && practicas) {
+                var teo =parseInt(teoricas);
+                var pra = parseInt(practicas);
+                $("#idTotHor").val((teo+pra)*15);
+            }
+            else {
+                $("#idTotHor").val("0");   
+            }
+
+            if ($("#idEquiv").val().trim()){
+                desc+= equivTxt;
+                alert(descFin);
+                alert(desc);
+                if (desc.includes(descFin)){
+                    desc = desc.replace(descFin,"");    
+                }
+                
+                desc = desc.replace("-E-",$("#idEquiv").val());
+                
+                   
+            }
+            desc = desc.replace("-L-",$("#slArea1").val());
+            if (!desc.includes(descFin)){
+                desc+=descFin;
+            }
+            $("#lbldesc").text(desc);
+        });
+
+
+    });
+    </script>
+
+</head>
+
+
+<body>
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="#">Dirección del Área Académica Técnica</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Nueva Forma</a></li>
+
+            <li class="pure-menu-item"><a href="#laforma" class="pure-menu-link">Inicio</a></li>
+
+            <li class="pure-menu-item"><a href="#idFuentesBasicas" class="pure-menu-link">Final</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">SisCoRed20</h1>
+        <p class="splash-subhead">
+            Generador automático del Formato 30
+            CoDirPE
+        </p>
+        <p>
+            <!--a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a
+            pure-u-md-2-5
+            -->
+        </p>
+    </div>
+</div>
+
+
+<div class="content-wrapper">
+	<div class="pure-g">
+		<div class="l-box-lrg pure-u-1 .pure-u-sm-4-5">
+			<form id="laforma" class="pure-form pure-form-stacked" action="generate" method="post" enctype="multipart/form-data">
+				<fieldset>
+					<label >Programa Educativo:</label>
+					<!--input id="idname" type="text" name="nomPE"-->
+                    <select id="idname" name="nomPE">
+                        <option value="Arquitectura"> Arquitectura</option>
+                        <option value="Ciencias Atmosféricas">Ciencias Atmosféricas </option>
+                        <option value="Física">Física </option>
+                        <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
+                        <option value="Ingeniería Biomédica">Ingeniería Biomédica </option>
+                        <option value="Ingeniería Civil">Ingeniería Civil</option>
+                        <option value="Ingeniería en Alimentos">Ingeniería en Alimentos </option>
+                        <option value="Ingeniería en Biotecnología">Ingeniería en Biotecnología</option>
+                        <option value="Ingeniería en Electrónica y Comunicaciones">Ingeniería en Electrónica y Comunicaciones </option>
+                        <option value="Ingeniería en Instrumentación Electrónica">Ingeniería en Instrumentación Electrónica </option>
+                        <option value="Ingeniería en Tecnologías Computacionales">Ingeniería en Tecnologías Computacionales </option>
+                        <option value="Ingeniería Industrial">Ingeniería Industrial </option>
+                        <option value="Ingeniería Informática ">Ingeniería Informática </option>
+                        <option value="Ingeniería Mecánica Eléctrica">Ingeniería Mecánica Eléctrica </option>
+                        <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica </option>
+                        <option value="Ingeniería Metalúrgica y Ciencias de los Materiales">Ingeniería Metalúrgica y Ciencias de los Materiales </option>
+                        <option value="Ingeniería Naval">Ingeniería Naval </option>
+                        <option value="Ingeniería Petrolera">Ingeniería Petrolera </option>
+                        <option value="Ingeniería Química">Ingeniería Química </option>
+                        <option value="Ingeniería Topográfica y Geodésica">Ingeniería Topográfica y Geodésica </option>
+                        <option value="Matemáticas">Matemáticas </option>
+                        <option value="Química Industrial">Química Industrial </option>
+                        <option value="Químico Farmacéutico Biólogo">Químico Farmacéutico Biólogo</option>
+
+                   
+                    </select>
+					<label >Campus:</label >
+					<!--input id="idCampus" type="text" name="nomCampus" -->
+                    <select id="idCampus" name="nomCampus">
+                        <option value="0">Xalapa</option>
+                        <option value="1">Veracruz - Boca</option>
+                        <option value="2">Córdoba - Orizaba</option>
+                        <option value="3">Pozarica - Tuxpan</option>
+                        <option value="4">Coatzacoalcos - Minatitlán</option>
+                    </select>
+
+					<label >Dependencia:</label >
+					<input id="idDep" type="text" name="nomDep" >
+
+                    <label >Código:</label >
+                    <input id="idCodigo" type="text" name="codigo" >
+
+                    <label >Experiencia Educativa:</label >
+                    <input id="idEE" type="text" name="nomEE" >
+
+                    <label >Área de formación</label >
+                    <label >Primaria:</label >
+                    <select class="descrip" id="slArea1" name="area1">
+                        <option value="AFBG">AFBG - (Básica General)</option>
+                        <option value="AFID">AFID - (Iniciación a la Disciplina)</option>
+                        <option value="AFD">AFD - (Disciplinar)</option>
+                        <option value="AFT">AFT - (Terminal)</option>
+                    </select>
+
+                    <label >Secundaria:</label >
+                    <input type="checkbox" name="area2" value="AFEL"> AFEL - (Elección Libre)<br>
+
+                    <fieldset>
+                        <label >Valores de la experiencia educativa</label >
+                        <label >Créditos:</label >
+                        <input class="descrip" id="idCred" type="number" name="numCred" >
+                        <label >Teoría:</label >
+                        <input class="descrip" id="idHTeo" type="number" name="numHTeo" >
+                        <label >Práctica:</label >
+                        <input class="descrip" id="idHPra" type="number" name="numHPra" >
+                        <label >Total Horas:</label >
+                        <input id="idTotHor" name="numTotHor" readonly="true"> 
+                        <label >Equivalencia (s):</label >
+                        <input class="descrip" id="idEquiv" type="text" name="nomEquiv" >
+                    </fieldset>
+
+                    <fieldset>
+                        <label >Modalidad:</label >
+                        <select id="slModal" name="Modal">
+                            <option value="1">Curso</option>
+                            <option value="2">Curso taller</option>
+                            <option value="3">Estancias académicas</option>
+                            <option value="4">Laboratorio</option>
+                            <option value="5">Práctica de campo </option>
+                            <option value="6">Práctica profesional</option>
+                            <option value="7">Seminario</option>
+                            <option value="8">Taller </option>
+                            <option value="9">Tronco Común </option>
+                            <option value="10">Interingenierías</option>
+                            <option value="11">Vinculación comunidad</option>
+                            <option value="12">Curso- Laboratorio</option>
+                        </select>
+
+                        <label >Oportunidades de Evaluación:</label >
+                        <input id="lblOportunidad" readonly="true" value="ABGHJK=Todas" name="oportu"> 
+
+                    </fieldset>
+
+                    <fieldset>
+                        <label >Requisitos</label >
+                        <label >Pre-requisitos:</label >
+                        <input id="idPrereq" type="text" name="nomPrereq" >
+                        <label >Co-requisitos:</label >
+                        <input id="idCoreq" type="text" name="nomCoreq" >
+                    </fieldset>
+
+                    <fieldset>
+                        <label >Características del proceso de Enseñanza aprendizaje</label >
+                        <label >Individual/Grupal:</label >
+                        <input id="idInd" type="text" name="nomInd" value="Grupal" >
+                        <label >Máximo:</label >
+                        <input id="idMax" type="text" name="nomMax" value="25" >
+                        <label >Mínimo:</label >
+                        <input id="idMin" type="text" name="nomMin" value="10">
+                    </fieldset>
+                
+                    <label >Agrupación Natural de la Experiencia Educativa:</label >
+                    <input id="idAgrup" type="text" name="nomAgrup" >
+
+                    <label >Proyecto integrador:</label >
+                    <input id="idProy" type="text" name="nomProy" >
+                    <fieldset>
+                        <label >Fecha de Elaboración:</label >
+                        <input id="idElab" type="date" name="fecElab" >
+                        <label >Fecha de Modificación:</label >
+                        <input id="idModif" type="date" name="fecModif" >
+                        <label >Fecha de Aprobación:</label >
+                        <input id="idAprob" type="date" name="fecAprob" >
+                    </fieldset>
+
+                    <label >Nombre de los académicos que participaron:</label >
+                    <input id="idAcademic" type="text" name="nomAcademic" >
+
+                    <label >Perfil del Docente:</label >
+                    <input class="evaluacion" id="idPerfil" type="text" name="nomPerfil" >
+
+                    <label >Espacio:</label >
+                    <input id="lblEspacio" name="Espacio" readonly="true" value="Múltiples">
+                    <!--
+                    -->
+                    <label >Relación Disciplinaria:</label >
+                    <input id="lblRelDisc" name="relacion">
+                    <!--
+                    <select id="slRelDisc" name="Relacion">
+                        <option value="0">Interdisciplinario</option>
+                        <option value="1">Multidisciplinario</option>
+                        <option value="2">Transdisciplinario</option>
+                    </select> 
+                    -->
+                    <label >Descripción:</label >
+                    <textarea class="evaluacion" id="lbldesc" name="nomDesc" readonly="true" >Esta experiencia educativa se localiza en el AFBG , cuenta con 0 horas teóricas, 0 horas prácticas y 0 créditos y tiene equivalencia con la(s) experiencia(s) educativa(s) -E- dentro del plan de estudios 2020</textarea>
+
+                    <textarea class="evaluacion" id="lbldesc2" name="nomDesc2">Su propósito es ---[mencionar de manera general y breve la justificación]---. Es indispensable para el estudiante ----[mencionar de manera general la acción integradora que ejecuta el estudiante en la experiencia educativa]---, para su desarrollo se proponen las estrategias metodológicas de ---[mencionar algunas de las estrategias metodológicos a implementar]---. Por lo tanto, el desempeño de la unidad de competencia se evidencia  mediante ---[mencionar la evidencia de desempeño]---.</textarea>
+
+                    <label >Justificación:</label >
+                    <input class="evaluacion" id="idJustificacion" type="text" name="nomJustificacion" >  
+
+                    <label >Unidad de Competencia:</label >
+                    <input id="idcompe" type="text" name="nomCompe" >
+                    <label >Articulación de los ejes:</label >
+                    <!--input id="idejes" type="text" name="nomEjes"-->
+                    <textarea class="evaluacion" id="idejes" name="nomEjes">Los alumnos reflexionan en grupo en un marco de orden y respeto mutuo, sobre ---[agregar el saber teórico general]---; ---[agregar el saber heurístico general]--- en equipo eje axiológico; elaboran ---[agregar la evidencia de desempeño de mayor peso en la evaluación]---. Finalmente discuten en grupo su propuesta.</textarea>
+
+
+                    <label >Saberes Teóricos:</label >
+                    <textarea class:"captura" id="idSaberesT" name="nomSaberesT" cols="20" rows="50" data-tooltip="Evitar numerar los saberes">- Tema Principal
+    * subtema
+                    </textarea> 
+
+
+                    <fieldset>
+                        <label >Saberes Heurísticos:</label >
+                        <textarea class:"captura" id="idSaberesH" name="nomSaberesH" cols="20" rows="50">
+                        </textarea> 
+                        <!--
+                        <input type="checkbox" name="ejeH1" value="ejeH1"> Trabajo en equipo<br>
+                        <input type="checkbox" name="ejeH2" value="ejeH2"> liderazgo<br>
+                        <input type="checkbox" name="ejeH3" value="Boat" checked> Romanticismo<br>
+                        -->
+                    </fieldset>
+
+                    <fieldset>
+                    <label >Saberes Axiológicos:</label >
+                    <textarea class:"captura" id="idSaberesA" name="nomSaberesA" cols="20" rows="50"></textarea> 
+                    <!--
+                        <input type="checkbox" name="ejeA1" value="ejeA1"> Trabajo en equipo<br>
+                        <input type="checkbox" name="ejeA2" value="ejeA2"> liderazgo<br>
+                        <input type="checkbox" name="ejeA3" value="ejeA3" checked> Romanticismo<br>
+                    -->
+                    </fieldset>
+                    <fieldset>
+                        <label >Estrategias Metodológicas</label >
+
+                        
+                        <fieldset>
+                        <label >de Aprendizaje teóricas:</label >
+
+                        <input type="checkbox" name="nomEstAp1" value="Diagrama de Flujo">Diagrama de Flujo <br>   
+                        <input type="checkbox" name="nomEstAp2" value="Exposición con apoyo tecnológico variado">Exposición con apoyo tecnológico variado<br>
+                        <input type="checkbox" name="nomEstAp3" value="Investigación documental">Investigación documental<br>
+                        <input type="checkbox" name="nomEstAp4" value="Lluvia de ideas">Lluvia de ideas<br>
+                        <input type="checkbox" name="nomEstAp5" value="Mapa mental">Mapa mental <br>
+                        <input type="checkbox" name="nomEstAp6" value="Mapas cognitivos. (de aspectos comunes, de cajas, de calamar, de ciclo, de secuencia, de telaraña, de tipo sol)">Mapas cognitivos. (de aspectos comunes, de cajas, de calamar, de ciclo, de secuencia, de telaraña, de tipo sol)<br>
+                        <input type="checkbox" name="nomEstAp7" value="Matriz de clasificación">Matriz de clasificación <br>
+                        <input type="checkbox" name="nomEstAp8" value="Recursos mnemotécnicos ">Recursos mnemotécnicos  <br>
+                        <input type="checkbox" name="nomEstAp9" value="Reportes de lectura">Reportes de lectura <br>
+                        <input type="checkbox" name="nomEstAp10" value="Resumen">Resumen <br>
+                        <input type="checkbox" name="nomEstAp11" value="Síntesis">Síntesis <br>
+                        <input type="checkbox" name="nomEstAp12" value="Analogías">Analogías <br>
+                        <input type="checkbox" name="nomEstAp13" value="Bitácoras">Bitácoras <br>
+                        <input type="checkbox" name="nomEstAp14" value="Discusión de problemas">Discusión de problemas<br>
+                        <input type="checkbox" name="nomEstAp15" value="Informes">Informes <br>
+                        <input type="checkbox" name="nomEstAp16" value="Investigación documental">Investigación documental<br>
+                        <input type="checkbox" name="nomEstAp17" value="Mapa cognitivo de algoritmo">Mapa cognitivo de algoritmo <br>
+                    </fieldset>
+                        
+                    </fieldset>
+                    <fieldset>
+                        <label >de Aprendizaje prácticas:</label >
+                        <input type="checkbox" name="nomEstApp1" value="Aprendizaje basado en problemas (ABPs)">Aprendizaje basado en problemas (ABPs)<br>   
+                        <input type="checkbox" name="nomEstApp2" value="Aprendizaje basado en proyectos (ABPy)">Aprendizaje basado en proyectos (ABPy)<br>  
+                        <input type="checkbox" name="nomEstApp3" value="Aprendizaje basado en TIC">Aprendizaje basado en TIC<br>  
+                        <input type="checkbox" name="nomEstApp4" value="Problemario">Problemario<br>  
+                        <input type="checkbox" name="nomEstApp5" value="Aprendizaje mediante el servicio">Aprendizaje mediante el servicio <br>  
+                        <input type="checkbox" name="nomEstApp6" value="Experimentos">Experimentos<br>  
+                        <input type="checkbox" name="nomEstApp7" value="Guión de prácticas">Guión de prácticas <br> 
+                        <input type="checkbox" name="nomEstApp8" value="Imitación de modelos">Imitación de modelos<br>   
+                        <input type="checkbox" name="nomEstApp9" value="Modelaje">Modelaje<br>  
+                        <input type="checkbox" name="nomEstApp10" value="Planteamiento de hipótesis">Planteamiento de hipótesis<br>  
+                        <input type="checkbox" name="nomEstApp11" value="Simulación">Simulación <br>  
+                        <input type="checkbox" name="nomEstApp12" value="Diario de campo">Diario de campo<br>  
+                       
+                    </fieldset>
+                    <fieldset>
+                        <label >de Aprendizaje Mixtas:</label >
+                        <input type="checkbox" name="nomEstApm1" value="Cuestionarios">Cuestionarios<br> 
+                        <input type="checkbox" name="nomEstApm2" value="Diagrama causa-efecto">Diagrama causa-efecto<br>
+                        <input type="checkbox" name="nomEstApm3" value="Ensayo">Ensayo<br>
+                        <input type="checkbox" name="nomEstApm4" value="Esquema radial">Esquema radial<br>
+                        <input type="checkbox" name="nomEstApm5" value="Esquema UVE de Gowin">Esquema UVE de Gowin<br>
+                        <input type="checkbox" name="nomEstApm6" value="Estudios de caso">Estudios de caso<br>
+                        <input type="checkbox" name="nomEstApm7" value="Investigación con tutoría">Investigación con tutoría<br>
+                        <input type="checkbox" name="nomEstApm8" value="Lectura e interpretación de textos">Lectura e interpretación de textos<br>
+                        <input type="checkbox" name="nomEstApm9" value="Red semántica">Red semántica<br>
+                        <input type="checkbox" name="nomEstApm10" value="WebQuest">WebQuest<br>
+                        <input type="checkbox" name="nomEstApm11" value="Aprendizaje autónomo">Aprendizaje autónomo<br>
+                        <input type="checkbox" name="nomEstApm12" value="Aprendizaje cooperativo">Aprendizaje cooperativo<br>
+                        <input type="checkbox" name="nomEstApm13" value="Aprendizaje in situ">Aprendizaje in situ<br>
+                        <input type="checkbox" name="nomEstApm14" value="QQQ">QQQ.<br>
+                        <input type="checkbox" name="nomEstApm15" value="Seminarios">Seminarios<br>
+                        <input type="checkbox" name="nomEstApm16" value="Aprendizaje interdisciplinario">Aprendizaje interdisciplinario<br>
+                    </fieldset>
+                    <fieldset>
+                        <label >de Enseñanza teóricas:</label >
+                        <input type="checkbox" name="nomEstEnsT1" value="Atención a dudas y comentarios">Atención a dudas y comentarios <br>
+                        <input type="checkbox" name="nomEstEnsT2" value="Planteamiento de preguntas guía">Planteamiento de preguntas guía.<br>
+                        <input type="checkbox" name="nomEstEnsT3" value="Preguntas detonadoras">Preguntas detonadoras.<br>
+                        <input type="checkbox" name="nomEstEnsT4" value="Preguntas metacognitivas">Preguntas metacognitivas.<br>
+                        <input type="checkbox" name="nomEstEnsT5" value="Explicación de procedimientos">Explicación de procedimientos.<br>
+                        <input type="checkbox" name="nomEstEnsT6" value="Recuperación de saberes previos">Recuperación de saberes previos.<br>
+
+                    </fieldset> 
+                      <fieldset>
+                        <label >de Enseñanza prácticas:</label >
+                        <input type="checkbox" name="nomEstEnsP1" value="Lectura comentada">Lectura comentada.<br>
+                        <input type="checkbox" name="nomEstEnsP2" value="Asesorías grupales">Asesorías grupales.<br>
+                        <input type="checkbox" name="nomEstEnsP3" value="Dirección de prácticas">Dirección de prácticas.<br>
+                    </fieldset> 
+                      <fieldset>
+                        <label >de Enseñanza Mixtas:</label >
+                        <input type="checkbox" name="nomEstEnsM1" value="Encuadre">Encuadre<br>
+                        <input type="checkbox" name="nomEstEnsM2" value="Asignación de tareas">Asignación de tareas<br>
+                        <input type="checkbox" name="nomEstEnsM3" value="Discusión dirigida">Discusión dirigida.<br>
+                        <input type="checkbox" name="nomEstEnsM4" value="Organización de grupos">Organización de grupos.<br>
+                        <input type="checkbox" name="nomEstEnsM5" value="Supervisión de trabajos">Supervisión de trabajos.<br>
+                        <input type="checkbox" name="nomEstEnsM6" value="Tutorías individuales">Tutorías individuales.<br>
+                    </fieldset> 
+                    
+
+
+                    <fieldset>
+                        <label >Apoyos Educativos</label >
+                       <fieldset>
+                        <label >Recursos didácticos:</label >
+                        <input type="checkbox" name="RecursoDidac1" value="Grabadora">Grabadora <br>
+                        <input type="checkbox" name="RecursoDidac2" value="Proyector/cañón">Proyector/cañón<br>
+                        <input type="checkbox" name="RecursoDidac3" value="Pantalla">Pantalla<br>
+                        <input type="checkbox" name="RecursoDidac4" value="Tablet">Tablet<br>
+                        <input type="checkbox" name="RecursoDidac5" value="Carteles">Carteles <br>
+                        <input type="checkbox" name="RecursoDidac6" value="Pizarrón">Pizarrón<br>
+                        <input type="checkbox" name="RecursoDidac7" value="Computadoras">Computadoras<br>
+                        <input type="checkbox" name="RecursoDidac8" value="Cámaras">Cámaras<br>
+                        
+                        <input type="checkbox" name="RecursoDidac9" value="TV">TV<br>
+                        <input type="checkbox" name="RecursoDidac10" value="Micrófono">Micrófono<br>
+                        <input type="checkbox" name="RecursoDidac11" value="Bocinas">Bocinas<br>
+                        <label >Otro(s):</label >
+                         <input type="text" name="RecursoDidac12">
+                       </fieldset>
+
+                       <fieldset>
+                        <label >Materiales:</label >
+                         <input type="checkbox" name="MatDidac1" value="Libros">Libros<br>
+                         <input type="checkbox" name="MatDidac2" value="Antologías">Antologías<br>
+                         <input type="checkbox" name="MatDidac3" value="Software">Software<br>
+                         <input type="checkbox" name="MatDidac4" value="Fotocopias">Fotocopias<br>
+                         <input type="checkbox" name="MatDidac5" value="Videos">Videos <br>
+                         <input type="checkbox" name="MatDidac6" value="Simulaciones interactivas">Simulaciones interactivas<br>
+                         <input type="checkbox" name="MatDidac7" value="Enciclopedias">Enciclopedias<br>
+                         <input type="checkbox" name="MatDidac8" value="Animaciones">Animaciones<br>
+                         <input type="checkbox" name="MatDidac9" value="CDs">CDs<br>
+                         <input type="checkbox" name="MatDidac10" value="Páginas web">Páginas web <br>
+                         <input type="checkbox" name="MatDidac11" value="Foros">Foros<br>
+                         <input type="checkbox" name="MatDidac12" value="Películas">Películas<br>
+                         <input type="checkbox" name="MatDidac13" value="Inforgrafías">Inforgrafías<br>
+                         <input type="checkbox" name="MatDidac14" value="Fotografías">Fotografías<br>
+                         <input type="checkbox" name="MatDidac15" value="Presentaciones">Presentaciones<br>
+                         <input type="checkbox" name="MatDidac16" value="Manual">Manual<br>
+                         <input type="checkbox" name="MatDidac17" value="Cartel">Cartel<br>
+                         <input type="checkbox" name="MatDidac18" value="Periódico">Periódico<br>
+                         <input type="checkbox" name="MatDidac19" value="Folletos">Folletos<br>
+                         <label >Otro:</label >
+                        <input id="idApoyoEdu" type="text" name="MatDidac20" >
+                      </fieldset>
+                    </fieldset>
+
+                    <fieldset>
+                        <label >Evaluación del desempeño:</label >
+                        <label >Evidencia(s) de desempeño:</label >
+                        <textarea id="idEvidencia" name="nomEvidencia" class="evaluacion"></textarea>
+                        <label >Criterios de desempeño:</label >
+                        <textarea id="idCriterio" name="nomCriterio" class="evaluacion"></textarea>
+                        <label >Ámbito(s) de aplicación:</label >
+                        <textarea id="idAmbitoap" name="nomAmbito"  class="evaluacion"></textarea>
+                        <label >Porcentaje:</label >
+                        <textarea id="idPorcentaje" name="nomPorcentaje" class="evaluacion"></textarea>
+                    </fieldset>
+
+                    <label >Acreditación:</label >
+                    Para acreditar esta EE el estudiante deberá haber presentado con idoneidad y pertinencia cada evidencia de desempeño, es decir, que en cada una de ellas haya obtenido cuando menos el 60%.
+
+                   
+                    <fieldset>
+                        <label >Fuentes de Información</label >
+                        <label >Básicas:</label >
+                        <textarea  class="evaluacion" id="idFuentesBasicas" type="text" name="nomFuentesBasicas" > </textarea> 
+                        <label >Complementarias:</label >
+                        <textarea class="evaluacion" id="idFuentesComplementarias" type="text" name="nomFuentesComp"> Biblioteca Virtual</textarea> 
+
+                    </fieldset>
+					<button type="submit" class="pure-button">Generar</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
