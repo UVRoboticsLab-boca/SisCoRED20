@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -71,16 +71,20 @@
             }
         });
 
-        $('.descrip').change(function() {
-            if ($("#idCred").val().trim()){
-                desc = desc.replace("-C-",$("#idCred").val());
+        $('.descrip').change(function () {
+            if ($("#idCred").val().trim()) {
+                    desc = desc.replace("-C-", $("#idCred").val());
             }
             //desc = desc.replace("-C-",$(this).val());
 
             var teoricas = $("#idHTeo").val().trim();
             var practicas = $("#idHPra").val().trim();
             if (teoricas) {
-                desc = desc.replace("-H-",$("#idHTeo").val());
+                $('#idHTeo').on('input', function () {
+                    var valor = $("#idHTeo").val();
+                    desc = desc.replace("-H-", valor);
+                    });
+             
             }
             if (practicas) {
                 desc = desc.replace("-P-",$("#idHPra").val());
@@ -191,10 +195,10 @@
 					<!--input id="idCampus" type="text" name="nomCampus" -->
                     <select id="idCampus" name="nomCampus">
                         <option value="0">Xalapa</option>
-                        <option value="1">Veracruz - Boca</option>
-                        <option value="2">Córdoba - Orizaba</option>
-                        <option value="3">Pozarica - Tuxpan</option>
-                        <option value="4">Coatzacoalcos - Minatitlán</option>
+                        <option value="1">Veracruz </option>
+                        <option value="2">Orizaba -Córdoba</option>
+                        <option value="3">Coatzacoalcos - Minatitlán</option>
+                        <option value="4">Poza Rica - Tuxpan</option>
                     </select>
 
 					<label >Dependencia:</label >
@@ -243,10 +247,8 @@
                             <option value="6">Práctica profesional</option>
                             <option value="7">Seminario</option>
                             <option value="8">Taller </option>
-                            <option value="9">Tronco Común </option>
-                            <option value="10">Interingenierías</option>
-                            <option value="11">Vinculación comunidad</option>
-                            <option value="12">Curso- Laboratorio</option>
+                            <option value="9">Vinculación comunidad</option>
+                            <option value="10">Curso- Laboratorio</option>
                         </select>
 
                         <label >Oportunidades de Evaluación:</label >

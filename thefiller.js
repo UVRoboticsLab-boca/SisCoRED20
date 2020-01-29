@@ -35,16 +35,16 @@ http.createServer(function (req, res) {
       cp = parseInt(fields.nomCampus);
       switch (cp) {
         case 1:
-          campus ="Veracruz-Boca del Río";
+          campus ="Veracruz";
           break;
         case 2:
-          campus = "Córdoba-Orizaba";
+              campus = "Orizaba - Córdoba";
           break;
         case 3:
-          campus = "Pozarica-Tuxpan";
+              campus = "Coatzacoalcos - Minatitlán";
           break;
         case 4:
-          campus = "Coatzacoalcos-Minatitlán";
+              campus = "Poza Rica - Tuxpan";
           break;
       }
 
@@ -76,15 +76,9 @@ http.createServer(function (req, res) {
           modalidad = "Taller";
           break;
         case 9:
-          modalidad = "Tronco Común";
-          break;
-        case 10:
-          modalidad = "Interingenierías";
-          break;
-        case 11:
           modalidad = "Vinculación comunidad";
           break;
-        case 12:
+        case 10:
           modalidad = "Curso-Laboratorio";
           break;       
 
