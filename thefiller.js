@@ -32,7 +32,7 @@ http.createServer(function (req, res) {
       
       console.log(fields);
       var campus ="Xalapa";
-      cp = parseInt(fields.nomCampus);
+      var cp = parseInt(fields.nomCampus);
       switch (cp) {
         case 1:
           campus ="Veracruz";
@@ -47,6 +47,54 @@ http.createServer(function (req, res) {
               campus = "Poza Rica - Tuxpan";
           break;
       }
+    var depen ="";
+    var dep = parseInt(fields.nomDep);
+
+    switch(dep){
+      case 0:
+        depen="Arquitectura";
+        break;
+      case 1:
+        depen="Ingeniería Civil";
+        break;
+      case 2:
+        depen="Ingeniería Mecánica Eléctrica";
+        break;
+      case 3:
+        depen="Ciencias Químicas";
+        break;
+      case 4:
+        depen="Química Farmacéutica Bióloga";
+        break;
+      case 5:
+        depen="Instrumentación Electrónica";
+        break;
+      case 6:
+        depen="Matemáticas";
+        break;
+      case 7:
+        depen="Física";
+        break;
+      case 8:
+        depen="Ingeniería de la Construcción y el Hábitat";
+        break;
+      case 9:
+        depen="Ingeniería Eléctrica y Electrónica";
+        break;
+      case 10:
+        depen="Ingeniería Mecánica y Ciencias Navales";
+        break;
+      case 11:
+        depen="Ingeniería";
+        break;
+      case 12:
+        depen="Ingeniería Mecánica y Eléctrica";
+        break;
+      case 13:
+        depen="Ingeniería en Electrónica y Comunicaciones";
+        break;
+
+    }
 
     var modalidad = "Curso";
 
@@ -389,7 +437,7 @@ http.createServer(function (req, res) {
       doc.setData({
           programa: fields.nomPE,
           campus: campus,
-          dependencia: fields.nomDep,
+          dependencia: depen,
           codigo: fields.codigo,
           experiencia: fields.nomEE,
           area_1: fields.area1,

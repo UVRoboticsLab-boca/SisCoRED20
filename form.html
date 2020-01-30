@@ -35,10 +35,47 @@
             
         });
         $('#idCampus').change(function() {
-            if($('#idCampus').val=="Xalapa"){
-                //$("#idDep
+            
+            $("#idDep").children('option').hide();
+            
+            if($('#idCampus').val()=="0"){
+                $("#idDep").children("option[value=0]").show();
+                $("#idDep").children("option[value=1]").show();
+                $("#idDep").children("option[value=2]").show();
+                $("#idDep").children("option[value=3]").show();
+                $("#idDep").children("option[value=4]").show();
+                $("#idDep").children("option[value=5]").show();
+                $("#idDep").children("option[value=6]").show();
+                $("#idDep").children("option[value=7]").show();
+                $("#idDep").val("0");
             }
-
+            if($('#idCampus').val()=="1"){
+                $("#idDep").children("option[value=8]").show();
+                $("#idDep").children("option[value=9]").show();
+                $("#idDep").children("option[value=10]").show();
+                $("#idDep").children("option[value=3]").show();
+                $("#idDep").val("9");
+            }
+            if($('#idCampus').val()=="2"){
+                $("#idDep").children("option[value=0]").show();
+                $("#idDep").children("option[value=11]").show();
+                $("#idDep").children("option[value=3]").show();
+                $("#idDep").val("0");
+            }
+            if($('#idCampus').val()=="4"){
+                $("#idDep").children("option[value=0]").show();
+                $("#idDep").children("option[value=12]").show();
+                $("#idDep").children("option[value=1]").show();
+                $("#idDep").children("option[value=13]").show();
+                $("#idDep").children("option[value=3]").show();
+                $("#idDep").val("0");
+            }
+            if($('#idCampus').val()=="3"){
+                $("#idDep").children("option[value=11]").show();
+                
+                $("#idDep").children("option[value=3]").show();
+                $("#idDep").val("11");
+            }
 
         });
         $('#slModal').change(function() {
@@ -203,27 +240,27 @@
                     <select id="idCampus" name="nomCampus">
                         <option value="0">Xalapa</option>
                         <option value="1">Veracruz </option>
-                        <option value="2">Orizaba -Córdoba</option>
+                        <option value="2">Orizaba - Córdoba</option>
                         <option value="3">Coatzacoalcos - Minatitlán</option>
                         <option value="4">Poza Rica - Tuxpan</option>
                     </select>
 
 					<label >Dependencia:</label >
 					<select id="idDep" name="nomDep" >
-                        <option value="Arquitectura" visibility="false">Arquitectura</option>
-                        <option value="Ingeniería Civil">Ingeniería Civil </option>
-                        <option value="Ingeniería Mecánica Eléctrica">Ingeniería Mecánica Eléctrica</option>
-                        <option value="Ciencias Químicas">Ciencias Químicas</option>
-                        <option value="Química Farmacéutica Bióloga">Química Farmacéutica Bióloga</option>
-                        <option value="Instrumentación Electrónica">Instrumentación Electrónica</option>
-                        <option value="Matemáticas">Matemáticas</option>
-                        <option value="Física">Física</option>
-                        <option value="Ingeniería de la Construcción y el Hábitat">Ingeniería de la Construcción y el Hábitat</option>
-                        <option value="Ingeniería Eléctrica y Electrónica">Ingeniería Eléctrica y Electrónica</option>
-                        <option value="Ingeniería Mecánica y Ciencias Navales">Ingeniería Mecánica y Ciencias Navales</option>
-                        <option value="Ingeniería">Ingeniería</option>
-                        <option value="Ingeniería Mecánica y Eléctrica">Ingeniería Mecánica y Eléctrica</option>
-                        <option value="Ingeniería en Electrónica y Comunicaciones">Ingeniería en Electrónica y Comunicaciones</option>
+                        <option value="0" visibility="false">Arquitectura</option>
+                        <option value="1">Ingeniería Civil </option>
+                        <option value="2">Ingeniería Mecánica Eléctrica</option>
+                        <option value="3">Ciencias Químicas</option>
+                        <option value="4">Química Farmacéutica Bióloga</option>
+                        <option value="5">Instrumentación Electrónica</option>
+                        <option value="6">Matemáticas</option>
+                        <option value="7">Física</option>
+                        <option value="8">Ingeniería de la Construcción y el Hábitat</option>
+                        <option value="9">Ingeniería Eléctrica y Electrónica</option>
+                        <option value="10">Ingeniería Mecánica y Ciencias Navales</option>
+                        <option value="11">Ingeniería</option>
+                        <option value="12">Ingeniería Mecánica y Eléctrica</option>
+                        <option value="13">Ingeniería en Electrónica y Comunicaciones</option>
                     </select>
 
 
