@@ -29,11 +29,18 @@
         var desc2 = "Su propósito es ---[mencionar de manera general y breve la justificación]---. Es indispensable para el estudiante ----[mencionar de manera general la acción integradora que ejecuta el estudiante en la experiencia educativa]---, para su desarrollo se proponen las estrategias metodológicas de ---[mencionar algunas de las estrategias metodológicos a implementar]---. Por lo tanto, el desempeño de la unidad de competencia se evidencia  mediante ---[mencionar la evidencia de desempeño]---.";
         var equivTxt= "y tiene equivalencia con la(s) experiencia(s) educativa(s) -E- ";
         var descFin = ", que integran el plan de estudios 2020.";
+
         $("button").click(function(){
             $("#menu").append('<li><a href="#">New list item</a></li>');
             
         });
+        $('#idCampus').change(function() {
+            if($('#idCampus').val=="Xalapa"){
 
+            }
+
+
+        });
         $('#slModal').change(function() {
             var opMod = parseInt($(this).val());
             switch(opMod){
@@ -165,7 +172,7 @@
 					<label >Programa Educativo:</label>
 					<!--input id="idname" type="text" name="nomPE"-->
                     <select id="idname" name="nomPE">
-                        <option value="Arquitectura"> Arquitectura</option>
+                        <option value="Arquitectura" disabledP> Arquitectura</option>
                         <option value="Ciencias Atmosféricas">Ciencias Atmosféricas </option>
                         <option value="Física">Física </option>
                         <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
@@ -202,7 +209,23 @@
                     </select>
 
 					<label >Dependencia:</label >
-					<input id="idDep" type="text" name="nomDep" >
+					<select id="idDep" name="nomDep" >
+                        <option value="Arquitectura" visibility="false">Arquitectura</option>
+                        <option value="Ingeniería Civil">Ingeniería Civil </option>
+                        <option value="Ingeniería Mecánica Eléctrica">Ingeniería Mecánica Eléctrica</option>
+                        <option value="Ciencias Químicas">Ciencias Químicas</option>
+                        <option value="Química Farmacéutica Bióloga">Química Farmacéutica Bióloga</option>
+                        <option value="Instrumentación Electrónica">Instrumentación Electrónica</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="Física">Física</option>
+                        <option value="Ingeniería de la Construcción y el Hábitat">Ingeniería de la Construcción y el Hábitat</option>
+                        <option value="Ingeniería Eléctrica y Electrónica">Ingeniería Eléctrica y Electrónica</option>
+                        <option value="Ingeniería Mecánica y Ciencias Navales">Ingeniería Mecánica y Ciencias Navales</option>
+                        <option value="Ingeniería">Ingeniería</option>
+                        <option value="Ingeniería Mecánica y Eléctrica">Ingeniería Mecánica y Eléctrica</option>
+                        <option value="Ingeniería en Electrónica y Comunicaciones">Ingeniería en Electrónica y Comunicaciones</option>
+                    </select>
+
 
                     <label >Código:</label >
                     <input id="idCodigo" type="text" name="codigo" >
