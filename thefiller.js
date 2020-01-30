@@ -166,14 +166,11 @@ http.createServer(function (req, res) {
       if(fields.nomEstAp5){
         estDeAprend += "-" + fields.nomEstAp5 +"\n";
       }
-      if(fields.nomEstAp5){
+      if(fields.nomEstAp6){
         estDeAprend += "-" + fields.nomEstAp6 +"\n";
       }
-      if(fields.nomEstAp6){
-        estDeAprend += "-" + fields.nomEstAp7 +"\n";
-      }
       if(fields.nomEstAp7){
-        estDeAprend += "-" + fields.nomEstAp8 +"\n";
+        estDeAprend += "-" + fields.nomEstAp7 +"\n";
       }
       if(fields.nomEstAp8){
         estDeAprend += "-" + fields.nomEstAp8 +"\n";
@@ -183,6 +180,9 @@ http.createServer(function (req, res) {
       }
       if(fields.nomEstAp10){
         estDeAprend += "-" + fields.nomEstAp10 +"\n";
+      }
+      if(fields.nomEstAp11){
+        estDeAprend += "-" + fields.nomEstAp11 +"\n";
       }
       if(fields.nomEstAp12){
         estDeAprend += "-" + fields.nomEstAp12 +"\n";
@@ -218,14 +218,11 @@ http.createServer(function (req, res) {
       if(fields.nomEstApp5){
         estDeAprend += "-" + fields.nomEstApp5 +"\n";
       }
-      if(fields.nomEstApp5){
+      if(fields.nomEstApp6){
         estDeAprend += "-" + fields.nomEstApp6 +"\n";
       }
-      if(fields.nomEstApp6){
-        estDeAprend += "-" + fields.nomEstApp7 +"\n";
-      }
       if(fields.nomEstApp7){
-        estDeAprend += "-" + fields.nomEstApp8 +"\n";
+        estDeAprend += "-" + fields.nomEstApp7 +"\n";
       }
       if(fields.nomEstApp8){
         estDeAprend += "-" + fields.nomEstApp8 +"\n";
@@ -234,7 +231,10 @@ http.createServer(function (req, res) {
         estDeAprend += "-" + fields.nomEstApp9 +"\n";
       }
       if(fields.nomEstApp10){
-        estDeAprend += "-" + fields.nomEstApp10 +"\n"
+        estDeAprend += "-" + fields.nomEstApp10 +"\n";
+      }
+      if(fields.nomEstApp11){
+        estDeAprend += "-" + fields.nomEstApp11 +"\n"
       }
       if(fields.nomEstApp12){
         estDeAprend += "-" + fields.nomEstApp12 +"\n";
@@ -255,14 +255,11 @@ http.createServer(function (req, res) {
       if(fields.nomEstApm5){
         estDeAprend += "-" + fields.nomEstApm5 +"\n";
       }
-      if(fields.nomEstApm5){
+      if(fields.nomEstApm6){
         estDeAprend += "-" + fields.nomEstApm6 +"\n";
       }
-      if(fields.nomEstApm6){
-        estDeAprend += "-" + fields.nomEstApm7 +"\n";
-      }
       if(fields.nomEstApm7){
-        estDeAprend += "-" + fields.nomEstApm8 +"\n";
+        estDeAprend += "-" + fields.nomEstApm7 +"\n";
       }
       if(fields.nomEstApm8){
         estDeAprend += "-" + fields.nomEstApm8 +"\n";
@@ -272,6 +269,9 @@ http.createServer(function (req, res) {
       }
       if(fields.nomEstApm10){
         estDeAprend += "-" + fields.nomEstApm10 +"\n";
+      }
+      if(fields.nomEstApm11){
+        estDeAprend += "-" + fields.nomEstApm11 +"\n";
       }
       if(fields.nomEstApm12){
         estDeAprend += "-" + fields.nomEstApm12 +"\n";
