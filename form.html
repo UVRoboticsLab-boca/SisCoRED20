@@ -39,7 +39,7 @@
             
             $("#idDep").children('option').hide();
             
-            if($('#idCampus').val()=="0"){
+            if($('#idCampus').val()=="1"){
                 $("#idDep").children("option[value=0]").show();
                 $("#idDep").children("option[value=1]").show();
                 $("#idDep").children("option[value=2]").show();
@@ -50,14 +50,14 @@
                 $("#idDep").children("option[value=7]").show();
                 $("#idDep").val("0");
             }
-            if($('#idCampus').val()=="1"){
+            if($('#idCampus').val()=="2"){
                 $("#idDep").children("option[value=8]").show();
                 $("#idDep").children("option[value=9]").show();
                 $("#idDep").children("option[value=10]").show();
                 $("#idDep").children("option[value=3]").show();
                 $("#idDep").val("9");
             }
-            if($('#idCampus').val()=="2"){
+            if($('#idCampus').val()=="3"){
                 $("#idDep").children("option[value=0]").show();
                 $("#idDep").children("option[value=11]").show();
                 $("#idDep").children("option[value=3]").show();
@@ -71,7 +71,7 @@
                 $("#idDep").children("option[value=3]").show();
                 $("#idDep").val("0");
             }
-            if($('#idCampus').val()=="3"){
+            if($('#idCampus').val()=="5"){
                 $("#idDep").children("option[value=11]").show();
                 
                 $("#idDep").children("option[value=3]").show();
@@ -207,6 +207,36 @@
 		<div class="l-box-lrg pure-u-1 .pure-u-sm-4-5">
 			<form id="laforma" class="pure-form pure-form-stacked" action="generate" method="post" enctype="multipart/form-data">
                 <fieldset>
+
+                    <label>Campus:</label>
+                    <!--input id="idCampus" type="text" name="nomCampus" -->
+                    <select id="idCampus" name="nomCampus" >
+                        <option value="0">--Seleccione opc--</option>
+                        <option value="1">Xalapa</option>
+                        <option value="2">Veracruz </option>
+                        <option value="3">Orizaba - Córdoba</option>
+                        <option value="4">Coatzacoalcos - Minatitlán</option>
+                        <option value="5">Poza Rica - Tuxpan</option>
+                    </select>
+
+                    <label>Dependencia:</label>
+                    <select id="idDep" name="nomDep">
+                        <option value="0" visibility="false">Arquitectura</option>
+                        <option value="1">Ingeniería Civil </option>
+                        <option value="2">Ingeniería Mecánica Eléctrica</option>
+                        <option value="3">Ciencias Químicas</option>
+                        <option value="4">Química Farmacéutica Bióloga</option>
+                        <option value="5">Instrumentación Electrónica</option>
+                        <option value="6">Matemáticas</option>
+                        <option value="7">Física</option>
+                        <option value="8">Ingeniería de la Construcción y el Hábitat</option>
+                        <option value="9">Ingeniería Eléctrica y Electrónica</option>
+                        <option value="10">Ingeniería Mecánica y Ciencias Navales</option>
+                        <option value="11">Ingeniería</option>
+                        <option value="12">Ingeniería Mecánica y Eléctrica</option>
+                        <option value="13">Ingeniería en Electrónica y Comunicaciones</option>
+                    </select>
+
                     <label>Programa Educativo:</label>
                     <!--input id="idname" type="text" name="nomPE"-->
                     <select id="idname" name="nomPE">
@@ -236,33 +266,6 @@
 
 
                     </select>
-                    <label>Campus:</label>
-                    <!--input id="idCampus" type="text" name="nomCampus" -->
-                    <select id="idCampus" name="nomCampus ">
-                        <option value="0">Xalapa</option>
-                        <option value="1">Veracruz </option>
-                        <option value="2">Orizaba - Córdoba</option>
-                        <option value="3">Coatzacoalcos - Minatitlán</option>
-                        <option value="4">Poza Rica - Tuxpan</option>
-                    </select>
-                    
-					<label >Dependencia:</label >
-					<select id="idDep" name="nomDep" >
-                        <option value="0" visibility="false">Arquitectura</option>
-                        <option value="1">Ingeniería Civil </option>
-                        <option value="2">Ingeniería Mecánica Eléctrica</option>
-                        <option value="3">Ciencias Químicas</option>
-                        <option value="4">Química Farmacéutica Bióloga</option>
-                        <option value="5">Instrumentación Electrónica</option>
-                        <option value="6">Matemáticas</option>
-                        <option value="7">Física</option>
-                        <option value="8">Ingeniería de la Construcción y el Hábitat</option>
-                        <option value="9">Ingeniería Eléctrica y Electrónica</option>
-                        <option value="10">Ingeniería Mecánica y Ciencias Navales</option>
-                        <option value="11">Ingeniería</option>
-                        <option value="12">Ingeniería Mecánica y Eléctrica</option>
-                        <option value="13">Ingeniería en Electrónica y Comunicaciones</option>
-                        </select>
 
 
                     <label>Código:</label>

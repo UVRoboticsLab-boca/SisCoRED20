@@ -33,20 +33,24 @@ http.createServer(function (req, res) {
       console.log(fields);
       var campus ="Xalapa";
       var cp = parseInt(fields.nomCampus);
-      switch (cp) {
-        case 1:
+        switch (cp) {
+            case 1:
+                campus = "Xalapa";
+                break;
+        case 2:
           campus ="Veracruz";
           break;
-        case 2:
+        case 3:
               campus = "Orizaba - Córdoba";
           break;
-        case 3:
+        case 4:
               campus = "Coatzacoalcos - Minatitlán";
           break;
-        case 4:
+        case 5:
               campus = "Poza Rica - Tuxpan";
           break;
-      }
+        }
+
     var depen ="";
     var dep = parseInt(fields.nomDep);
 
