@@ -49,8 +49,8 @@ http.createServer(function (req, res) {
       }
 
     var modalidad = "Curso";
-
-    switch (fields.Modal) {
+        cp1 = parseInt(fields.Modal);
+    switch (cp1) {
         case 1:
           modalidad ="Curso";
           break;
@@ -82,7 +82,23 @@ http.createServer(function (req, res) {
           modalidad = "Curso-Laboratorio";
           break;       
 
-      }
+        }
+        var Espacios;
+        cp2 = parseInt(fields.Espacio);
+        switch (cp2) {
+            case 1:
+                Espacios = "Interprograma Educativo";
+                break;
+            case 2:
+                Espacios = "Intrafacultad";
+                break;
+            case 3:
+                Espacios = "Interfacultad";
+                break;
+            case 4:
+                Espacios = "Multiples";
+                break;
+        }
 
       var estDeAprend = "";
       var estDeEns = "";
@@ -413,7 +429,7 @@ http.createServer(function (req, res) {
           fapro: fields.fecAprob,
           academicos: fields.nomAcademic,
           perfil: fields.nomPerfil,
-          espacio: fields.Espacio,
+          espacio: Espacios,
           relacion: fields.relacion,
           descrip: descripcion,
           justificacion: fields.nomJustificacion,
