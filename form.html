@@ -66,8 +66,7 @@
             if($('#idCampus').val()=="4"){
                 $("#idDep").children("option[value=0]").show();
                 $("#idDep").children("option[value=12]").show();
-                $("#idDep").children("option[value=1]").show();
-                $("#idDep").children("option[value=13]").show();
+                $("#idDep").children("option[value=1]").show();                
                 $("#idDep").children("option[value=3]").show();
                 $("#idDep").val("0");
             }
@@ -79,8 +78,17 @@
             }
 
         });
-        $('#slModal').change(function() {
+         
+        $('#idDep').change(function () {
+            $("#idname").children().hide();
+            $("#idname").children("option." + $("#idCampus").children("option:selected").data('reg') + $("#idDep").children("option:selected").data('fac')).show();
+            $("#idname").val("0");
+        });
+        
+        
+        $('#slModal').change(function () {
             var opMod = parseInt($(this).val());
+            alert(opMod);
             switch(opMod){
                 case 1:
                 case 2:
@@ -115,10 +123,16 @@
                 $("#lblEspacio").val("Múltiples");
             }
         });
-
         $('.descrip').change(function () {
+            var desc3 = desc;
+            var x = $('#idCred').val().trim();
+            var y = $('#idHTeo').val().trim();
+            var z = $("#idHPra").val().trim();
+            desc3 = desc3.replace("-C-", x);
+            desc3 = desc3.replace("-H-", y);
+            desc3 = desc3.replace("-P-", z);
             if ($("#idCred").val().trim()) {
-                    desc = desc.replace("-C-", $("#idCred").val());
+
             }
             //desc = desc.replace("-C-",$(this).val());
 
@@ -127,12 +141,12 @@
             if (teoricas) {
                 $('#idHTeo').on('input', function () {
                     var valor = $("#idHTeo").val();
-                    desc = desc.replace("-H-", valor);
+                    desc3 = desc3.replace("-H-", valor);
                     });
              
             }
             if (practicas) {
-                desc = desc.replace("-P-",$("#idHPra").val());
+                desc3 = desc3.replace("-P-",$("#idHPra").val());
             }
 
             if (teoricas && practicas) {
@@ -145,22 +159,21 @@
             }
 
             if ($("#idEquiv").val().trim()){
-                desc+= equivTxt;
+                desc3+= equivTxt;
                 alert(descFin);
-                alert(desc);
-                if (desc.includes(descFin)){
-                    desc = desc.replace(descFin,"");    
+                alert(desc3);
+                if (desc3.includes(descFin)){
+                    desc3 = desc3.replace(descFin,"");    
                 }
                 
-                desc = desc.replace("-E-",$("#idEquiv").val());
-                
+                desc3 = desc3.replace("-E-",$("#idEquiv").val());                
                    
             }
-            desc = desc.replace("-L-",$("#slArea1").val());
-            if (!desc.includes(descFin)){
-                desc+=descFin;
+            desc3 = desc3.replace("-L-",$("#slArea1").val());
+            if (!desc3.includes(descFin)){
+                desc3+=descFin;
             }
-            $("#lbldesc").text(desc);
+            $("#lbldesc").text(desc3);
         });
 
 
@@ -212,57 +225,57 @@
                     <!--input id="idCampus" type="text" name="nomCampus" -->
                     <select id="idCampus" name="nomCampus" >
                         <option value="0">--Seleccione opc--</option>
-                        <option value="1">Xalapa</option>
-                        <option value="2">Veracruz </option>
-                        <option value="3">Orizaba - Córdoba</option>
-                        <option value="4">Coatzacoalcos - Minatitlán</option>
-                        <option value="5">Poza Rica - Tuxpan</option>
+                        <option data-reg="x" value="1">Xalapa</option>
+                        <option data-reg="v" value="2">Veracruz </option>
+                        <option data-reg="o" value="3">Orizaba - Córdoba</option>
+                        <option data-reg="c" value="4">Coatzacoalcos - Minatitlán</option>
+                        <option data-reg="p" value="5">Poza Rica - Tuxpan</option>
                     </select>
 
                     <label>Dependencia:</label>
                     <select id="idDep" name="nomDep">
-                        <option value="0" visibility="false">Arquitectura</option>
-                        <option value="1">Ingeniería Civil </option>
-                        <option value="2">Ingeniería Mecánica Eléctrica</option>
-                        <option value="3">Ciencias Químicas</option>
-                        <option value="4">Química Farmacéutica Bióloga</option>
-                        <option value="5">Instrumentación Electrónica</option>
-                        <option value="6">Matemáticas</option>
-                        <option value="7">Física</option>
-                        <option value="8">Ingeniería de la Construcción y el Hábitat</option>
-                        <option value="9">Ingeniería Eléctrica y Electrónica</option>
-                        <option value="10">Ingeniería Mecánica y Ciencias Navales</option>
-                        <option value="11">Ingeniería</option>
-                        <option value="12">Ingeniería Mecánica y Eléctrica</option>
-                        <option value="13">Ingeniería en Electrónica y Comunicaciones</option>
+                        <option data-fac="a" value="0" visibility="false">Arquitectura</option>
+                        <option data-fac="ie" value="1">Ingeniería Civil </option>
+                        <option data-fac="ime" value="2">Ingeniería Mecánica Eléctrica</option>
+                        <option data-fac="cq" value="3">Ciencias Químicas</option>
+                        <option data-fac="qfb" value="4">Química Farmacéutica Bióloga</option>
+                        <option data-fac="ie" value="5">Instrumentación Electrónica</option>
+                        <option data-fac="m" value="6">Matemáticas</option>
+                        <option data-fac="f" value="7">Física</option>
+                        <option data-fac="ich" value="8">Ingeniería de la Construcción y el Hábitat</option>
+                        <option data-fac="iee" value="9">Ingeniería Eléctrica y Electrónica</option>
+                        <option data-fac="imcn" value="10">Ingeniería Mecánica y Ciencias Navales</option>
+                        <option data-fac="i" value="11">Ingeniería</option>
+                        <option data-fac="ime" value="12">Ingeniería Mecánica y Eléctrica</option>
+                        <option data-fac="iec" value="13">Ingeniería en Electrónica y Comunicaciones</option>
                     </select>
 
                     <label>Programa Educativo:</label>
                     <!--input id="idname" type="text" name="nomPE"-->
                     <select id="idname" name="nomPE">
-                        <option value="Arquitectura" disabledP> Arquitectura</option>
-                        <option value="Ciencias Atmosféricas">Ciencias Atmosféricas </option>
-                        <option value="Física">Física </option>
-                        <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
-                        <option value="Ingeniería Biomédica">Ingeniería Biomédica </option>
-                        <option value="Ingeniería Civil">Ingeniería Civil</option>
-                        <option value="Ingeniería en Alimentos">Ingeniería en Alimentos </option>
-                        <option value="Ingeniería en Biotecnología">Ingeniería en Biotecnología</option>
-                        <option value="Ingeniería en Electrónica y Comunicaciones">Ingeniería en Electrónica y Comunicaciones </option>
-                        <option value="Ingeniería en Instrumentación Electrónica">Ingeniería en Instrumentación Electrónica </option>
-                        <option value="Ingeniería en Tecnologías Computacionales">Ingeniería en Tecnologías Computacionales </option>
-                        <option value="Ingeniería Industrial">Ingeniería Industrial </option>
-                        <option value="Ingeniería Informática ">Ingeniería Informática </option>
-                        <option value="Ingeniería Mecánica Eléctrica">Ingeniería Mecánica Eléctrica </option>
-                        <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica </option>
-                        <option value="Ingeniería Metalúrgica y Ciencias de los Materiales">Ingeniería Metalúrgica y Ciencias de los Materiales </option>
-                        <option value="Ingeniería Naval">Ingeniería Naval </option>
-                        <option value="Ingeniería Petrolera">Ingeniería Petrolera </option>
-                        <option value="Ingeniería Química">Ingeniería Química </option>
-                        <option value="Ingeniería Topográfica y Geodésica">Ingeniería Topográfica y Geodésica </option>
-                        <option value="Matemáticas">Matemáticas </option>
-                        <option value="Química Industrial">Química Industrial </option>
-                        <option value="Químico Farmacéutico Biólogo">Químico Farmacéutico Biólogo</option>
+                        <option class="xa vich oa pa" value="Arquitectura"> Arquitectura</option>
+                        <option class="xie" value="Ciencias Atmosféricas">Ciencias Atmosféricas </option>
+                        <option class="xf" value="Física">Física </option>
+                        <option class="xcq ocq pcq ccq" value="Ingeniería Ambiental">Ingeniería Ambiental</option>
+                        <option class="xie" value="Ingeniería Biomédica">Ingeniería Biomédica </option>
+                        <option class="xic vich oi pic ci" value="Ingeniería Civil">Ingeniería Civil</option>
+                        <option class="xcq ocq" value="Ingeniería en Alimentos">Ingeniería en Alimentos </option>
+                        <option class="ocq ccq" value="Ingeniería en Biotecnología">Ingeniería en Biotecnología</option>
+                        <option class="viee piec" value="Ingeniería en Electrónica y Comunicaciones">Ingeniería en Electrónica y Comunicaciones </option>
+                        <option class="xie" value="Ingeniería en Instrumentación Electrónica">Ingeniería en Instrumentación Electrónica </option>
+                        <option class="piec" value="Ingeniería en Tecnologías Computacionales">Ingeniería en Tecnologías Computacionales </option>
+                        <option class="vimcn oi pime" value="Ingeniería Industrial">Ingeniería Industrial </option>
+                        <option class="viee" value="Ingeniería Informática ">Ingeniería Informática </option>
+                        <option class="xime vimcn oi pime ci" value="Ingeniería Mecánica Eléctrica">Ingeniería Mecánica Eléctrica </option>
+                        <option class="viee oi" value="Ingeniería Mecatrónica">Ingeniería Mecatrónica </option>
+                        <option class="vcq" value="Ingeniería Metalúrgica y Ciencias de los Materiales">Ingeniería Metalúrgica y Ciencias de los Materiales </option>
+                        <option class="vimcn" value="Ingeniería Naval">Ingeniería Naval </option>
+                        <option class="pcq ccq" value="Ingeniería Petrolera">Ingeniería Petrolera </option>
+                        <option class="xcq vcq ocq pcq ccq" value="Ingeniería Química">Ingeniería Química </option>
+                        <option class="vich" value="Ingeniería Topográfica y Geodésica">Ingeniería Topográfica y Geodésica </option>
+                        <option class="xm" value="Matemáticas">Matemáticas </option>
+                        <option class="ocq" value="Química Industrial">Química Industrial </option>
+                        <option class="xqfb ocq" value="Químico Farmacéutico Biólogo">Químico Farmacéutico Biólogo</option>
 
 
                     </select>
