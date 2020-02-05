@@ -1,4 +1,5 @@
 import { XmlAttributeComponent, XmlComponent } from "../../../file/xml-components";
+import { OverlapType } from "./table-overlap";
 export declare enum TableAnchorType {
     MARGIN = "margin",
     PAGE = "page",
@@ -30,6 +31,7 @@ export interface ITableFloatOptions {
     readonly topFromText?: number;
     readonly leftFromText?: number;
     readonly rightFromText?: number;
+    readonly overlap?: OverlapType;
 }
 export declare class TableFloatOptionsAttributes extends XmlAttributeComponent<ITableFloatOptions> {
     protected readonly xmlKeys: {

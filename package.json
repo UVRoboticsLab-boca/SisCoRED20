@@ -1,0 +1,142 @@
+{
+  "name": "siscored20",
+  "description": "Simple Hello World Node.js sample for Google App Engine Standard Environment.",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "Luis Marin",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@types/jszip": {
+      "integrity": "sha512-m8uFcI+O2EupCfbEVQWsBM/4nhbegjOHL7cQgBpM95FeF98kdFJXzy9/8yhx4b3lCRl/gMBhcvyh30Qt3X+XPQ==",
+      "requires": {
+        "@types/node": "*"
+      },
+      "resolved": "https://registry.npmjs.org/@types/jszip/-/jszip-3.1.6.tgz",
+      "version": "3.1.6"
+    },
+    "@types/node": {
+      "integrity": "sha512-u/SJDyXwuihpwjXy7hOOghagLEV1KdAST6syfnOk6QZAMzZuWZqXy5aYYZbh8Jdpd4escVFP0MvftHNDb9pruA==",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-12.12.14.tgz",
+      "version": "12.12.14"
+    },
+    "core-util-is": {
+      "integrity": "sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=",
+      "resolved": "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz",
+      "version": "1.0.2"
+    },
+    "docx": "^5.0.2",
+    "docxtemplater": "^3.16.8",
+    "formidable": "^1.2.1",
+    "immediate": {
+      "integrity": "sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=",
+      "resolved": "https://registry.npmjs.org/immediate/-/immediate-3.0.6.tgz",
+      "version": "3.0.6"
+    },
+    "inherits": {
+      "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",
+      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",
+      "version": "2.0.4"
+    },
+    "isarray": {
+      "integrity": "sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=",
+      "resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "jszip": {
+      "integrity": "sha512-NmKajvAFQpbg3taXQXr/ccS2wcucR1AZ+NtyWp2Nq7HHVsXhcJFR8p0Baf32C2yVvBylFWVeKf+WI2AnvlPhpA==",
+      "requires": {
+        "lie": "~3.3.0",
+        "pako": "~1.0.2",
+        "readable-stream": "~2.3.6",
+        "set-immediate-shim": "~1.0.1"
+      },
+      "resolved": "https://registry.npmjs.org/jszip/-/jszip-3.2.2.tgz",
+      "version": "3.2.2"
+    },
+    "lie": {
+      "integrity": "sha512-UaiMJzeWRlEujzAuw5LokY1L5ecNQYZKfmyZ9L7wDHb/p5etKaxXhohBcrw0EYby+G/NA52vRSN4N39dxHAIwQ==",
+      "requires": {
+        "immediate": "~3.0.5"
+      },
+      "resolved": "https://registry.npmjs.org/lie/-/lie-3.3.0.tgz",
+      "version": "3.3.0"
+    },
+    "mime": "^2.4.4",
+    "pako": {
+      "integrity": "sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==",
+      "resolved": "https://registry.npmjs.org/pako/-/pako-1.0.10.tgz",
+      "version": "1.0.10"
+    },
+    "pizzip": "^3.0.6",
+    "process-nextick-args": {
+      "integrity": "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==",
+      "resolved": "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz",
+      "version": "2.0.1"
+    },
+    "readable-stream": {
+      "integrity": "sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==",
+      "requires": {
+        "core-util-is": "~1.0.0",
+        "inherits": "~2.0.3",
+        "isarray": "~1.0.0",
+        "process-nextick-args": "~2.0.0",
+        "safe-buffer": "~5.1.1",
+        "string_decoder": "~1.1.1",
+        "util-deprecate": "~1.0.1"
+      },
+      "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.6.tgz",
+      "version": "2.3.6"
+    },
+    "safe-buffer": {
+      "integrity": "sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==",
+      "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz",
+      "version": "5.1.2"
+    },
+    "sax": {
+      "integrity": "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==",
+      "resolved": "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz",
+      "version": "1.2.4"
+    },
+    "set-immediate-shim": {
+      "integrity": "sha1-SysbJ+uAip+NzEgaWOXlb1mfP2E=",
+      "resolved": "https://registry.npmjs.org/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz",
+      "version": "1.0.1"
+    },
+    "string_decoder": {
+      "integrity": "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==",
+      "requires": {
+        "safe-buffer": "~5.1.0"
+      },
+      "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz",
+      "version": "1.1.1"
+    },
+    "util-deprecate": {
+      "integrity": "sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=",
+      "resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+      "version": "1.0.2"
+    },
+    "xml": {
+      "integrity": "sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=",
+      "resolved": "https://registry.npmjs.org/xml/-/xml-1.0.1.tgz",
+      "version": "1.0.1"
+    },
+    "xml-js": {
+      "integrity": "sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==",
+      "requires": {
+        "sax": "^1.2.4"
+      },
+      "resolved": "https://registry.npmjs.org/xml-js/-/xml-js-1.6.11.tgz",
+      "version": "1.6.11"
+    },
+    "xmldom": {
+      "integrity": "sha1-1QH5ezvbQDr4757MIFcxh6rawOk=",
+      "resolved": "https://registry.npmjs.org/xmldom/-/xmldom-0.1.27.tgz",
+      "version": "0.1.27"
+    }
+  }
+}

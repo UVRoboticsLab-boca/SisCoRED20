@@ -7,6 +7,7 @@ import { IPageBordersOptions } from "./page-border";
 import { IPageMarginAttributes } from "./page-margin/page-margin-attributes";
 import { IPageNumberTypeAttributes } from "./page-number";
 import { IPageSizeAttributes } from "./page-size/page-size-attributes";
+import { ISectionVerticalAlignAttributes } from "./vertical-align";
 export interface IHeaderFooterGroup<T> {
     readonly default?: T;
     readonly first?: T;
@@ -21,7 +22,7 @@ interface IFootersOptions {
 interface ITitlePageOptions {
     readonly titlePage?: boolean;
 }
-export declare type SectionPropertiesOptions = IPageSizeAttributes & IPageMarginAttributes & IDocGridAttributesProperties & IHeadersOptions & IFootersOptions & IPageNumberTypeAttributes & ILineNumberAttributes & IPageBordersOptions & ITitlePageOptions & {
+export declare type SectionPropertiesOptions = IPageSizeAttributes & IPageMarginAttributes & IDocGridAttributesProperties & IHeadersOptions & IFootersOptions & IPageNumberTypeAttributes & ILineNumberAttributes & IPageBordersOptions & ITitlePageOptions & ISectionVerticalAlignAttributes & {
     readonly column?: {
         readonly space?: number;
         readonly count?: number;

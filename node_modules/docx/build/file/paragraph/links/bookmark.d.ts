@@ -1,17 +1,14 @@
 import { XmlComponent } from "../../../file/xml-components";
 import { TextRun } from "../run";
 export declare class Bookmark {
-    readonly linkId: number;
     readonly start: BookmarkStart;
     readonly text: TextRun;
     readonly end: BookmarkEnd;
-    constructor(name: string, text: string, relationshipsCount: number);
+    constructor(name: string, text: string);
 }
 export declare class BookmarkStart extends XmlComponent {
-    readonly linkId: number;
-    constructor(name: string, relationshipsCount: number);
+    constructor(name: string, linkId: string);
 }
 export declare class BookmarkEnd extends XmlComponent {
-    readonly linkId: number;
-    constructor(relationshipsCount: number);
+    constructor(linkId: string);
 }
