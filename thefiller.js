@@ -132,7 +132,7 @@ http.createServer(function (req, res) {
 
         }
         var Espacios;
-        cp2 = parseInt(fields.Espacio);
+        var cp2 = parseInt(fields.Espacio);
         switch (cp2) {
             case 1:
                 Espacios = "Interprograma Educativo";
