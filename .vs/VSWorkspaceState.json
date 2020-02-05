@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\static",
+    "\\static\\css",
+    "\\static\\css\\layouts",
+    "\\static\\img",
     "\\tests"
   ],
   "SelectedNode": "\\thefiller.js",
