@@ -1,0 +1,31 @@
+{
+	"name": "SisCoRED20",
+	"author": "Microsoft Corporation",
+	"contributors": [
+		"Roberto <zs15001395@estudiantes.uv.mx>"
+		
+	],
+	"version": "12.14.1",
+	"description": "Se supone con esto queda.",
+	"tags": [
+		"azure",
+		"sdk"
+	],
+	"keywords": [
+		"node",
+		"azure"
+	],
+	"main": "./app.js",
+	"license": "MIT",
+	"dependencies": {
+		"async": "0.2.7",
+		"azure-arm-resource": "^1.4.4-preview",
+		"expand-tilde": "^1.2.2",
+		"ms-rest-azure": "^1.14.3"
+	},
+	"homepage": "https://github.com/UVRoboticsLab-boca/SisCoRED20/blob/master/app.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/UVRoboticsLab-boca/SisCoRED20"
+	}
+}

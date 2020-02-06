@@ -1,12 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.idea",
+    "\\programas",
+    "\\sources",
     "\\static",
     "\\static\\css",
-    "\\static\\css\\layouts",
     "\\static\\img",
-    "\\tests"
+    "\\static\\img\\common"
   ],
-  "SelectedNode": "\\thefiller.js",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }
